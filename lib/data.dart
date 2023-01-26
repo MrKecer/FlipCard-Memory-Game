@@ -29,7 +29,7 @@ List<String> fillSourceArray() {
 List getSourceArray(
   Level level,
 ) {
-  List<String> levelAndKindList = new List<String>();
+  List<String> levelAndKindList = [];
   List sourceArray = fillSourceArray();
   if (level == Level.Hard) {
     sourceArray.forEach((element) {
@@ -50,7 +50,7 @@ List getSourceArray(
 }
 
 List<bool> getInitialItemState(Level level) {
-  List<bool> initialItemState = new List<bool>();
+  List<bool> initialItemState = [];
   if (level == Level.Hard) {
     for (int i = 0; i < 18; i++) {
       initialItemState.add(true);
@@ -68,8 +68,7 @@ List<bool> getInitialItemState(Level level) {
 }
 
 List<GlobalKey<FlipCardState>> getCardStateKeys(Level level) {
-  List<GlobalKey<FlipCardState>> cardStateKeys =
-      new List<GlobalKey<FlipCardState>>();
+  List<GlobalKey<FlipCardState>> cardStateKeys = [];
   if (level == Level.Hard) {
     for (int i = 0; i < 18; i++) {
       cardStateKeys.add(GlobalKey<FlipCardState>());

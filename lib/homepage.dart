@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (BuildContext context) => _list[index].goto,
+                      builder: (BuildContext context) => _list[index].goto!,
                     ));
               },
               child: Padding(
@@ -37,11 +37,7 @@ class _HomePageState extends State<HomePage> {
                           color: _list[index].primarycolor,
                           borderRadius: BorderRadius.circular(30),
                           boxShadow: [
-                            BoxShadow(
-                                blurRadius: 4,
-                                color: Colors.black45,
-                                spreadRadius: 0.5,
-                                offset: Offset(3, 4))
+                            BoxShadow(blurRadius: 4, color: Colors.black45, spreadRadius: 0.5, offset: Offset(3, 4))
                           ]),
                     ),
                     Container(
@@ -65,27 +61,20 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Center(
                               child: Text(
-                            _list[index].name,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                                shadows: [
-                                  Shadow(
-                                    color: Colors.black26,
-                                    blurRadius: 2,
-                                    offset: Offset(1, 2),
-                                  ),
-                                  Shadow(
-                                      color: Colors.green,
-                                      blurRadius: 2,
-                                      offset: Offset(0.5, 2))
-                                ]),
+                            _list[index].name!,
+                            style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold, shadows: [
+                              Shadow(
+                                color: Colors.black26,
+                                blurRadius: 2,
+                                offset: Offset(1, 2),
+                              ),
+                              Shadow(color: Colors.green, blurRadius: 2, offset: Offset(0.5, 2))
+                            ]),
                           )),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
-                            children: genratestar(_list[index].noOfstar),
+                            children: genratestar(_list[index].noOfstar!),
                           )
                         ],
                       ),
@@ -115,18 +104,13 @@ class _HomePageState extends State<HomePage> {
 }
 
 class Details {
-  String name;
-  Color primarycolor;
-  Color secomdarycolor;
-  Widget goto;
-  int noOfstar;
+  String? name;
+  Color? primarycolor;
+  Color? secomdarycolor;
+  Widget? goto;
+  int? noOfstar;
 
-  Details(
-      {this.name,
-      this.primarycolor,
-      this.secomdarycolor,
-      this.noOfstar,
-      this.goto});
+  Details({this.name, this.primarycolor, this.secomdarycolor, this.noOfstar, this.goto});
 }
 
 List<Details> _list = [
