@@ -12,11 +12,10 @@ class FlipCardGane extends StatefulWidget {
 
 class _FlipCardGaneState extends State<FlipCardGane> {
   _FlipCardGaneState(this._level);
-
   int? _previousIndex = 0;
-  bool? _flip = false;
+  bool? _flip = true;
   bool? _start = false;
-
+  bool onFlip = false;
   bool? _wait = false;
   Level? _level;
   Timer? _timer;
@@ -139,16 +138,15 @@ class _FlipCardGaneState extends State<FlipCardGane> {
                           crossAxisCount: 3,
                         ),
                         itemBuilder: (context, index) {
-                          print(_data);
                           return _start!
                               ? FlipCard(
                                   key: _cardStateKeys![index],
                                   onFlip: () {
                                     if (_flip!) {
-                                      _flip = true;
+                                      _flip = false;
                                       _previousIndex = index;
                                     } else {
-                                      _flip = false;
+                                      _flip = true;
 
                                       if (_previousIndex != index) {
                                         if (_data![_previousIndex!] != _data![index]) {
