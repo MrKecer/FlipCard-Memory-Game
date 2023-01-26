@@ -7,8 +7,8 @@
 
 
 
-Optimized for Flutter (Channel stable, 3.3.8). 
-Switched to null safety. 
-A few bugs have been fixed.
+Optimized for Flutter (Channel stable, 3.3.8). <br />
+Switched to null safety. <br />
+A few bugs have been fixed.<br />
 
 
